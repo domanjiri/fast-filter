@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package filler;
+
+message Request {
+  repeated uint32 categories = 1;
+}
+
+message Response {
+  repeated Ad ads = 1;
+}
+
+message Ad {
+  string id = 1;
+}
+
+service Filler {
+  rpc fill(Request) returns (Response);
+}
